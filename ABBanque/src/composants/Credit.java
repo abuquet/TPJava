@@ -7,4 +7,11 @@ public class Credit extends Flux {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "Credit [commentaire=" + commentaire + ", identifiant=" + identifiant + ", montant=" + montant
+				+ ", numCompteCible=" + numCompteCible + ", effectue=" + effectue + "]";
+	}
+	
+
 }

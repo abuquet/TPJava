@@ -7,4 +7,12 @@ public class Debit extends Flux {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "Debit [commentaire=" + commentaire + ", identifiant=" + identifiant + ", montant=" + montant
+				+ ", numCompteCible=" + numCompteCible + ", effectue=" + effectue + "]";
+	}
+	
+	
+
 }
