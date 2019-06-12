@@ -2,7 +2,7 @@ package composants;
 //1.2.1 classe Compte
 public abstract class Compte {
 	protected String libelle;
-	protected double solde;
+	protected Flux solde;
 	protected int numCompte;
 	protected static int count=1;
 	protected Client client;
@@ -21,11 +21,11 @@ public abstract class Compte {
 		this.libelle = libelle;
 	}
 
-	public double getSolde() {
+	public Flux getSolde() {
 		return solde;
 	}
 
-	public void setSolde(double solde) {
+	public void setSolde(Flux solde) {
 		this.solde = solde;
 	}
 

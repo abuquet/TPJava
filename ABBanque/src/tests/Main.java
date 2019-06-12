@@ -1,7 +1,9 @@
 //1.1.2 classe Main
 package tests;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 import composants.Client;
 import composants.Compte;
@@ -13,13 +15,16 @@ public class Main {
 
 	static ArrayList<Client> alClients = new ArrayList<Client>();
 	static ArrayList<Compte> alComptes = new ArrayList<Compte>();
+	static Hashtable<Integer, Compte> hComptes = new Hashtable<Integer, Compte>();
 
 
 	public static void main(String[] args) {
 		genererClient(3);
 		afficherClients(alClients);
 		genererComptes(alClients);
-		afficherComptes(alComptes);
+		//afficherComptes(alComptes);
+		hashCompte(alComptes);
+		afficherHCompte(hComptes);
 	}
 
 	public static void afficherClients(ArrayList<Client> clients) {
@@ -46,12 +51,28 @@ public class Main {
 		}
 		return alComptes;
 	}
-	
-	public static void afficherComptes(ArrayList<Compte> compte) {
-		for(int i = 0; i < compte.size(); i++)
+
+	public static void afficherComptes(ArrayList<Compte> comptes) {
+		for(int i = 0; i < comptes.size(); i++)
 		{
-			System.out.println(compte.get(i));
+			System.out.println(comptes.get(i));
 		}
+	}
+	
+	public static Hashtable hashCompte(ArrayList<Compte> comptes) {
+		for(int i = 0; i < comptes.size(); i++)
+		{
+			hComptes.put(i, comptes.get(i));
+		}
+		return hComptes;
+	}
+	
+	public static void afficherHCompte(Hashtable ht) {
+		Enumeration e = ht.elements();
+		Enumeration k = ht.keys();
+
+	    while(e.hasMoreElements())
+	      System.out.println(k.nextElement() + " : " + e.nextElement());
 	}
 
 }
