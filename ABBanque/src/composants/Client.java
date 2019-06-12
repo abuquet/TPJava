@@ -34,12 +34,12 @@ public class Client {
 		return numClient;
 	}
 
-	/*public void setNumClient(int numClient) {
+	public void setNumClient(int numClient) {
 		this.numClient = numClient;
-	}*/
+	}
 
 	@Override
 	public String toString() {
-		return "Le client numéro " + numClient + " s'appelle " + prenom + " " + nom + ".";
+		return "Le client " + numClient + " : " + prenom + " " + nom + ".";
 	}
 }
