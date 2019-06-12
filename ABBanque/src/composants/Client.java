@@ -1,16 +1,17 @@
 package composants;
-
-
 //1.1.1 Création de la classe client
+
+
 public class Client {
 	private String nom;
 	private String prenom;
-	private int numClient = 0;
+	private int numClient;
+	private static int count = 1;
 	
 	public Client(String nom, String prenom) {
 		this.nom = nom;
 		this.prenom = prenom;
-		this.numClient++;
+		this.numClient = count++;
 	}
 
 	public String getNom() {
@@ -33,12 +34,12 @@ public class Client {
 		return numClient;
 	}
 
-	public void setNumClient(int numClient) {
+	/*public void setNumClient(int numClient) {
 		this.numClient = numClient;
-	}
+	}*/
 
 	@Override
 	public String toString() {
-		return "Le client numéro " + numClient + "s'appelle " + prenom + nom + ".";
+		return "Le client numéro " + numClient + " s'appelle " + prenom + " " + nom + ".";
 	}
 }
