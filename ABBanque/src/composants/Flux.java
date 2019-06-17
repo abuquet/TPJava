@@ -1,11 +1,14 @@
 package composants;
 
+import java.util.Date;
+
 public abstract class Flux {
 	protected String commentaire;
 	protected int identifiant;
 	protected double montant;
 	protected int numCompteCible;
 	protected boolean effectue;
+	protected Date dateFlux;
 	
 	public Flux(String commentaire, int identifiant, double montant, int numCompteCible, boolean effectue) {
 		this.commentaire = commentaire;
@@ -13,6 +16,7 @@ public abstract class Flux {
 		this.montant = montant;
 		this.numCompteCible = numCompteCible;
 		this.effectue = effectue;
+		this.dateFlux = new Date();
 	}
 
 	public String getCommentaire() {
@@ -53,6 +57,14 @@ public abstract class Flux {
 
 	public void setEffectue(boolean effectue) {
 		this.effectue = effectue;
+	}
+
+	public Date getDateFlux() {
+		return dateFlux;
+	}
+
+	public void setDateFlux(Date dateFlux) {
+		this.dateFlux = dateFlux;
 	}
 	
 	

@@ -10,7 +10,7 @@ public class Credit extends Flux {
 	@Override
 	public String toString() {
 		return "Credit [commentaire=" + commentaire + ", identifiant=" + identifiant + ", montant=" + montant
-				+ ", numCompteCible=" + numCompteCible + ", effectue=" + effectue + "]";
+				+ ", numCompteCible=" + numCompteCible + ", effectue=" + effectue + ", dateFlux=" + dateFlux + "]";
 	}
 	
 

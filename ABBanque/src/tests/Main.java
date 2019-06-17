@@ -1,8 +1,9 @@
 //1.1.2 classe Main
 package tests;
 
-import java.lang.reflect.Array;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
@@ -33,7 +34,9 @@ public class Main {
 		afficherHCompte(hComptes);
 		genererFlux();
 		afficherFlux();
-
+		//afficherComptes(alComptes);
+		majSolde(tabFlux, hComptes);
+		afficherComptes(alComptes);
 	}
 
 	public static void afficherClients(ArrayList<Client> clients) {
@@ -85,13 +88,24 @@ public class Main {
 	}
 
 	public static ArrayList<Flux> genererFlux() {
-		Debit deb50 = new Debit("débit de 50€", 1, 50, 3, true);
-		Credit cred100 = new Credit("crédit de 100,50€", 2, 100.5, 4, true);
-		Credit cred1500 = new Credit("crédit de 1500 €", 3, 1500, 1, true);
-		Virement vir50 = new Virement("virement de 50€ du compte 1 vers le 2", 4, 50, 2, true, 1);
+		Debit deb50 = new Debit("débit de 50€", 1, 50, 1, true);
 		tabFlux.add(deb50);
-		tabFlux.add(cred100);
-		tabFlux.add(cred1500);
+		for (int i=0; i < alComptes.size(); i++) {
+			if (alComptes.get(i).getClass() == CompteCourant.class) {
+				Credit cred100 = new Credit("crédit de 100,50€", i, 100.5, i, true);
+				tabFlux.add(cred100);
+			}
+		}
+
+		for (int i=0; i < alComptes.size(); i++) {
+			if (alComptes.get(i).getClass() == CompteEpargne.class) {
+				Credit cred1500 = new Credit("crédit de 1500 €", i, 1500, i, true);
+				tabFlux.add(cred1500);
+			}
+		}
+
+
+		Virement vir50 = new Virement("virement de 50€ du compte 1 vers le 2", 4, 50, 2, true,1);
 		tabFlux.add(vir50);
 		return tabFlux;
 	}
@@ -103,4 +117,11 @@ public class Main {
 		}
 	}
 
+	public static void majSolde(ArrayList<Flux> flux, Hashtable<Integer,Compte> ht) {
+		for(int i = 0; i < flux.size(); i++) {
+			for (int j = 0; j < alComptes.size(); j++) {
+				alComptes.get(j).setSolde(tabFlux.get(i));
+			}			
+		}
+	}
 }
