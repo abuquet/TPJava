@@ -23,19 +23,28 @@ public class Main {
 	static ArrayList<Compte> alComptes = new ArrayList<Compte>();
 	static Hashtable<Integer, Compte> hComptes = new Hashtable<Integer, Compte>();
 	static ArrayList<Flux> tabFlux = new ArrayList<Flux>();
+	static int compteurcc = 1;
+	static int compteurce;
 
 
 	public static void main(String[] args) {
 		genererClient(3);
+		System.out.println("Tableau des clients");
 		afficherClients(alClients);
 		genererComptes(alClients);
-		//afficherComptes(alComptes);
+		afficherComptes(alComptes);
+		System.out.println("___");
+		System.out.println("Hashtable des comptes");
 		hashCompte(alComptes);
 		afficherHCompte(hComptes);
 		genererFlux();
+		System.out.println("___");
+		System.out.println("Affichage des fluxs");
 		afficherFlux();
 		//afficherComptes(alComptes);
 		majSolde(tabFlux, hComptes);
+		System.out.println("___");
+		System.out.println("Comptes après application des fluxs");
 		afficherComptes(alComptes);
 	}
 
@@ -92,14 +101,14 @@ public class Main {
 		tabFlux.add(deb50);
 		for (int i=0; i < alComptes.size(); i++) {
 			if (alComptes.get(i).getClass() == CompteCourant.class) {
-				Credit cred100 = new Credit("crédit de 100,50€", i, 100.5, i, true);
+				Credit cred100 = new Credit("crédit de 100,50€", i, 100.5, alComptes.get(i).getNumCompte(), true);
 				tabFlux.add(cred100);
 			}
 		}
 
 		for (int i=0; i < alComptes.size(); i++) {
 			if (alComptes.get(i).getClass() == CompteEpargne.class) {
-				Credit cred1500 = new Credit("crédit de 1500 €", i, 1500, i, true);
+				Credit cred1500 = new Credit("crédit de 1500 €", i, 1500, alComptes.get(i).getNumCompte(), true);
 				tabFlux.add(cred1500);
 			}
 		}
@@ -120,7 +129,11 @@ public class Main {
 	public static void majSolde(ArrayList<Flux> flux, Hashtable<Integer,Compte> ht) {
 		for(int i = 0; i < flux.size(); i++) {
 			for (int j = 0; j < alComptes.size(); j++) {
-				alComptes.get(j).setSolde(tabFlux.get(i));
+				if (flux.get(i).getClass() == Virement.class) {
+					alComptes.get(j).setSolde((Virement)tabFlux.get(i));
+				}else {
+					alComptes.get(j).setSolde(tabFlux.get(i));
+				}
 			}			
 		}
 	}
