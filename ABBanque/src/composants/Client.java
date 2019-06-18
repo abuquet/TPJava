@@ -40,6 +40,6 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Le client " + numClient + " : " + prenom + " " + nom + ".";
+		return "Client " + numClient + " : " + prenom + " " + nom + ".";
 	}
 }

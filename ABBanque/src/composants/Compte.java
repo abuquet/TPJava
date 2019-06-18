@@ -64,6 +64,6 @@ public abstract class Compte {
 
 	@Override
 	public String toString() {
-		return libelle + " : solde=" + solde + ", numCompte=" + numCompte + ", client=" + client;
+		return libelle + " : numCompte=" + numCompte + ", solde=" + solde + ", client=" + client;
 	}
 }

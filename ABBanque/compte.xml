@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<comptes>
+	<compte classe="courant">
+		<libelle>compte courant</libelle>
+		<solde>100.0</solde>
+		<client>
+			<nom>Dupont</nom>
+			<prenom>Robert</prenom>
+		</client>
+	</compte>
+	<compte classe="epargne">
+		<libelle>compte épargne</libelle>
+		<solde>650.0</solde>
+		<client>
+			<nom>Dupond</nom>
+			<prenom>Luke</prenom>
+		</client>
+	</compte>
+	<compte classe="courant">
+		<libelle>compte épargne</libelle>
+		<solde>650.0</solde>
+		<client>
+			<nom>Machin</nom>
+			<prenom>Truc</prenom>
+		</client>
+	</compte>
+</comptes>

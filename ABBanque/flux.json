@@ -1,0 +1,59 @@
+[
+	{
+		"classe": "Debit",
+		"commentaire": "Débit de 50€",
+		"montant": "88.0",
+		"numCompteCible": 1,
+		"effectue": true
+	},
+	{
+		"classe": "Credit",
+		"commentaire": "crédit de 100.50€",
+		"montant": "100.5",
+		"numCompteCible": 1,
+		"effectue": true
+	},
+	{
+		"classe": "Credit",
+		"commentaire": "crédit de 100.50€",
+		"montant": "100.5",
+		"numCompteCible": 3,
+		"effectue": true
+	},
+	{
+		"classe": "Credit",
+		"commentaire": "crédit de 100.50€",
+		"montant": "100.5",
+		"numCompteCible": 5,
+		"effectue": true
+	},
+	{
+		"classe": "Credit",
+		"commentaire": "crédit de 1500€",
+		"montant": "100.5",
+		"numCompteCible": 2,
+		"effectue": true
+	},
+	{
+		"classe": "Credit",
+		"commentaire": "crédit de 1500€",
+		"montant": "100.5",
+		"numCompteCible": 7,
+		"effectue": true
+	},
+	{
+		"classe": "Credit",
+		"commentaire": "crédit de 1500€",
+		"montant": "100.5",
+		"numCompteCible": 8,
+		"effectue": true
+	},
+	{
+		"classe": "Virement",
+		"commentaire": "virement de 50€ du compte 1 au compte 2",
+		"montant": "100.5",
+		"numCompteCible": 9,
+		"compteEmet": 1,
+		"effectue": true
+	}
+]
